@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quênia - Descubra o País</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        navbarLinks.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault(); 
+
+                const targetId = this.getAttribute("href").substring(1);
+                const targetButton = document.getElementById(targetId);
+
+                document.querySelectorAll(".btn").forEach(btn => {
+                    btn.classList.remove("btn-highlight");
+                });
+
+                if (targetButton) {
+                    targetButton.classList.add("btn-highlight");
+                    targetButton.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            });
+        });
+    });
+</script>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Descubra o Quênia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#btn-turismo">Turismo</a></li>
+                <li class="nav-item"><a class="nav-link" href="#btn-gastronomia">Gastronomia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#btn-cultura">Cultura</a></li>
+                <li class="nav-item"><a class="nav-link" href="#btn-dicas">Dicas para Viajantes</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center py-5">
+    <div class="container">
+        <div class="hero-card">
+            <div class="hero-card-image"></div> 
+            <div class="hero-content">
+                <h1 class="mt-3 display-4 font-weight-bold">Bem-vindo ao Quênia</h1>
+            </div>
+        </div>
+        <p class="lead mb-4" style="font-size: 1.25rem; font-weight: bold;">Explore as belezas naturais, a rica cultura e a gastronomia única deste incrível país africano.</p>
+    </div>
+</header>
+
+<div class="row py-5 text-center">
+    <div class="col-md-3 mb-4">
+        <div class="card d-flex flex-column" style="height: 100%;">
+            <img src="imagens/imagem-paisagem.jpg" class="card-img-top" alt="Turismo">
+            <div class="card-body">
+                <h5 class="card-title">Turismo no Quênia</h5>
+                <p class="card-text">Descubra safáris, praias paradisíacas e paisagens deslumbrantes.</p>
+                <a id="btn-turismo" href="turismo.html" class="btn btn-primary mt-auto">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card d-flex flex-column" style="height: 100%;">
+            <img src="imagens/gastronomia.jpg" class="card-img-top" alt="Gastronomia">
+            <div class="card-body">
+                <h5 class="card-title">Gastronomia</h5>
+                <p class="card-text">Experimente pratos típicos como o Nyama Choma e Ugali.</p>
+                <a id="btn-gastronomia" href="gastronomia.html" class="btn btn-primary mt-auto">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card d-flex flex-column" style="height: 100%;">
+            <img src="imagens/cultura.jpg" class="card-img-top" alt="Cultura">
+            <div class="card-body">
+                <h5 class="card-title">Cultura e Tradições</h5>
+                <p class="card-text">Mergulhe na diversidade cultural do Quênia.</p>
+                <a id="btn-cultura" href="cultura.html" class="btn btn-primary mt-auto">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card d-flex flex-column" style="height: 100%;">
+            <img src="imagens/capital.jpg" class="card-img-top" alt="Dicas para Viajantes">
+            <div class="card-body">
+                <h5 class="card-title">Dicas para Viajantes</h5>
+                <p class="card-text">Tudo o que você precisa saber antes de visitar o Quênia.</p>
+                <a id="btn-dicas" href="dicaViajantes.html" class="btn btn-primary mt-auto">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Descubra o Quênia. Feito por Guilherme Chamon.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
